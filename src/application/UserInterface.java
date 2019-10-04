@@ -16,9 +16,10 @@ public class UserInterface {
 
 	private static void printPiece(ChessPiece piece) {
 		if (piece == null) {
-			System.out.print("- ");
+			System.out.print("-");
 		} else {
-			System.out.print(" ");
+			System.out.print(piece);
 		}
+		System.out.print(" ");
 	}
 }
