@@ -1,19 +1,24 @@
 package boardgame;
 
-public class Piece {
-	
+public abstract class Piece {
+
 	protected Position position;
 	private Board board;
-	
+
 	public Piece(Board board) {
 		this.board = board;
 		position = null;
 	}
 
-	//apenas classes do mesmo pacote e subclasses podem acessar esse get
+	// apenas classes do mesmo pacote e subclasses podem acessar esse get
 	protected Board getBoard() {
 		return board;
 	}
-	//set é apagado para não permitir que o tabuleiro seja alterado
-	
+
+	public abstract boolean[][] possibleMoves();
+
+	public boolean possibleMove(Position position) {
+		return possibleMoves()[position.getRow()][position.getColumn()];
+	}
+
 }
